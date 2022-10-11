@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="kanban1">
+            <div class="kanban__column">
+                <div class="kanban__column-title"><strong>Para Hacer</strong></div>
+                <div class="column1">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Baños</h5>
+                            <p class="card-text">Limpiar los baños a fondo</p>
+                            <!-- Botón que lanza el modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              Modificar
+                          </button> 
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                          <!-- Modal -->
+                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Modificar Tarjeta</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="text" id="myInput" placeholder="Zona">
+                                    <input type="text" id="myInput2" placeholder="Lo que hacer">
+                                
+                                
+                               
+                                <span onclick="newElement()" class="addBtn btn-primary">Modificar</span>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                          </div>
+                      </div>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Añadir
+                    </button> 
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Añadir Tarjeta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <input type="text" id="myInput" placeholder="Zona">
+                                <input type="text" id="myInput2" placeholder="Lo que hacer">
+                            
+                            
+                           
+                            <span onclick="newElement()" class="addBtn btn-primary">Añadir</span>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                      
+                </div>
+            </div>
+
+        </div>
+        <div class="kanban2">
+            <div class="kanba2__column">
+                <div class="kanban__column-title"><strong>Para Hacer</strong></div>
+                <div class="card" style="width: 15rem;">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Baños</h5>
+                        <p class="card-text">Limpiar los baños a fondo</p>
+                        <!-- Botón que lanza el modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          Modificar
+                      </button> 
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modificar Tarjeta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <input type="text" id="myInput" placeholder="Zona">
+                                <input type="text" id="myInput2" placeholder="Lo que hacer">
+                            
+                            
+                           
+                            <span onclick="newElement()" class="addBtn btn-primary">Modificar</span>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Añadir
+                </button> 
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Añadir Tarjeta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        
+                        </div>
+                        <div class="modal-footer">
+                            <input type="text" id="myInput" placeholder="Zona">
+                            <input type="text" id="myInput2" placeholder="Lo que hacer">
+                        
+                        
+                       
+                        <span onclick="newElement()" class="addBtn btn-primary">Añadir</span>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="kanban3">
+            <div class="kanba3__column">
+                <div class="kanban__column-title"><strong>Para Hacer</strong></div>
+                <div class="card" style="width: 15rem;">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Baños</h5>
+                        <p class="card-text">Limpiar los baños a fondo</p>
+                        <!-- Botón que lanza el modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          Modificar
+                      </button> 
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modificar Tarjeta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            
+                            </div>
+                            <div class="modal-footer">
+                                <input type="text" id="myInput" placeholder="Zona">
+                                <input type="text" id="myInput2" placeholder="Lo que hacer">
+                            
+                            
+                           
+                            <span onclick="newElement()" class="addBtn btn-primary">Modificar</span>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Añadir
+                </button> 
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Añadir Tarjeta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        
+                        </div>
+                        <div class="modal-footer">
+                            <input type="text" id="myInput" placeholder="Zona">
+                            <input type="text" id="myInput2" placeholder="Lo que hacer">
+                        
+                        
+                       
+                        <span onclick="newElement()" class="addBtn btn-primary">Añadir</span>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+    <script src="./app.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
