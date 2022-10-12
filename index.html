@@ -1,5 +1,6 @@
 <!-- Archivo destinado a crear el contenido con HTMLS -->
-<!-- comentari de salva -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,11 @@
 </head>
 <body>
     <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-3 border-bottom border-primary">
+    <!-- https://getbootstrap.com/docs/5.2/components/navbar/  enlace de referencia-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary border-3 border-bottom border-primary">
+        <!-- https://www.w3schools.com/bootstrap4/bootstrap_containers.asp -->
         <div class="container-fluid ">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">To Do </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,13 +38,17 @@
           </div>
         </div>
       </nav>
+      <!-- Aquí usamos la card : https://www.w3schools.com/bootstrap4/bootstrap_cards.asp-->
       <div class="card" style="width: 18rem;">
       <div class="card">
         <div class="card-body">
           Añadir zona nueva
         </div>
 
-        <!-- Boton que lanza el moodal -->
+
+
+    <!-- Boton que lanza el moodal -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
     <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Añadir</button>
     
     <!-- modal -->
@@ -56,22 +63,22 @@
                       <form class="needs-validation" novalidate>
                           <div class="col-md-4">
                               <label for="validationCustom01" class="form-label">Nombre de tarjeta</label>
-                              <input type="text" class="form-control is-valid" id="validacion1" value="" required>
+                              <input type="text" class="form-control is-invalid" id="validacion1" value="" required>
                               
                               <div class="valid-feedback">Ok!</div>
-                              <div class="invalid-feedback">Por favor elija un nombre de tarjeta</div>
+                              <div class="invalid-feedback">Por favor, elija un nombre de tarjeta</div>
                           </div>
                           <div class="col-md-4">
                               <label for="validationCustom02" class="form-label">Decripcion de la tarjeta</label>
                               <input type="text" class="form-control is-invalid" id="validacion2" value="" required>
                               <div class="valid-feedback">Ok!</div>
-                              <div class="invalid-feedback">Por favor elija una descripcion de la tarjeta</div>
+                              <div class="invalid-feedback">Por favor, elija una descripción de la tarjeta</div>
                           </div>
                           <div class="col-12">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                                 <label class="form-check-label" for="invalidCheck">
-                                  Agree to terms and conditions
+                                  Acepto los términos y las condiciones
                                 </label>
                                 <div class="invalid-feedback">
                                   You must agree before submitting.
@@ -83,15 +90,16 @@
               </div>
               <div class="modal-footer">
                   <button class="btn btn-primary" type="submit">Submit form</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
               </div>
           </div>
       </div>
       </div>
         
                                 
-           </div>
       </div>
+      </div>
+
     </div>
     <div class="row">
         <div class="col-sm-3">
