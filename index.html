@@ -1,35 +1,38 @@
 <!-- Archivo destinado a crear el contenido con HTMLS -->
-
-
+<!-- pruebas de salvador con github-->
+<!-- qué bien,,, ya se como funciona github jejeje ahora poco a poco mejorar compañeros, me resulta util la web de w3schools-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interfaz 1</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+
+a { text-decoration: none; 
+    color: white} 
+
+</style>
+
 <body>
     <div class="container-fluid">
-    <!-- https://getbootstrap.com/docs/5.2/components/navbar/  enlace de referencia-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary border-3 border-bottom border-primary">
-        <!-- https://www.w3schools.com/bootstrap4/bootstrap_containers.asp -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-3 border-bottom border-primary">
         <div class="container-fluid ">
-          <a class="navbar-brand" href="#">To Do </a>
+          <a class="navbar-brand" href="#">TO DO</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pag 1</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Pag 2</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
@@ -38,47 +41,43 @@
           </div>
         </div>
       </nav>
-      <!-- Aquí usamos la card : https://www.w3schools.com/bootstrap4/bootstrap_cards.asp-->
-      <div class="card" style="width: 18rem;">
-      <div class="card">
-        <div class="card-body">
-          Añadir zona nueva
-        </div>
+
+      <button type="button" class="btn btn-primary" >
+        <a href="/interfaz2.html" style="color:aliceblue;"  style="text-decoration: none">Nuevo Panel</a>
+      </button>
+      
 
 
-
-    <!-- Boton que lanza el moodal -->
-    <!-- https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
-    <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Añadir</button>
-    
     <!-- modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
+             
               <div class="modal-header">
-                  <h5 class="modal-title">Añadir nueva tarjeta</h5>
+                  <h5 class="modal-title">Añadir nuevo panel</h5>
               </div>
+              
               <div class="modal-body">
                   <div class="container">
                       <form class="needs-validation" novalidate>
                           <div class="col-md-4">
-                              <label for="validationCustom01" class="form-label">Nombre de tarjeta</label>
+                              <label for="validationCustom01" class="form-label">Nombre del panel</label>
                               <input type="text" class="form-control is-invalid" id="validacion1" value="" required>
                               
                               <div class="valid-feedback">Ok!</div>
-                              <div class="invalid-feedback">Por favor, elija un nombre de tarjeta</div>
+                              <div class="invalid-feedback">Por favor, nombre el nuevo espacio</div>
                           </div>
                           <div class="col-md-4">
-                              <label for="validationCustom02" class="form-label">Decripcion de la tarjeta</label>
+                              <label for="validationCustom02" class="form-label">Decripción del espacio</label>
                               <input type="text" class="form-control is-invalid" id="validacion2" value="" required>
                               <div class="valid-feedback">Ok!</div>
-                              <div class="invalid-feedback">Por favor, elija una descripción de la tarjeta</div>
+                              <div class="invalid-feedback">Por favor, describa el nuevo espacio</div>
                           </div>
                           <div class="col-12">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                                 <label class="form-check-label" for="invalidCheck">
-                                  Acepto los términos y las condiciones
+                                  <h6>Acepto los términos y las condiciones</h6>
                                 </label>
                                 <div class="invalid-feedback">
                                   You must agree before submitting.
@@ -89,7 +88,7 @@
                   </div>               
               </div>
               <div class="modal-footer">
-                  <button class="btn btn-primary" type="submit">Submit form</button>
+                  <button class="btn btn-primary" type="submit">Añadir</button>
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
               </div>
           </div>
@@ -97,33 +96,30 @@
       </div>
         
                                 
+           </div>
       </div>
-      </div>
-
     </div>
-    <div class="row">
-        <div class="col-sm-3">
+    <div class="container"> 
+    <div class="row" >
+        <div class="col-sm-3 ">
           <div class="card">
             <img src="./img/2356194.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Ir a espacio</a>
+              <h5 class="card-title"><b>Tareas Grupales</b></h5>
+              <p class="card-text">En este espacio se organizarán las diferentes tareas del grupo</p>
+              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Entrar al panel </a>
               
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-               Eliminar</button>
-  
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+              Eliminar</button>
+                
                 <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <!-- modifiqué el id en el segundo modal... staticBackDrop2, en el caso contrario, iba al modal 1 y es error-->
+                <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Deleted card</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
                         <div class="modal-body">
-                        Desea el espacio ?
+                        <p>Si no desea más este panel pulse "Eliminar" <br> en caso contrario "Cerrar"</p> 
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -141,71 +137,37 @@
           <div class="card">
             <img src="./img/2356194.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Ir a espacio</a>
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <h5 class="card-title"><b>Tareas de Jaume</b></h5>
+              <p class="card-text">En este espacio habrán las tareas de Jaume</p>
+              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Entrar al espacio</a>
+              <!-- como ya está creado el modal 2, lo reusamos? -->
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                 Eliminar
                </button>
    
-                 <!-- Modal -->
-                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                         <h5 class="modal-title" id="staticBackdropLabel">Eliminar la tarjeta</h5>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                         </div>
-                         <div class="modal-body">
-                         Desea borrar la tarjeta?
-                         </div>
-                         <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                         <button type="button" class="btn btn-primary">Eliminar</button>
-                         </div>
-                     </div>
-                     </div>
-                 </div>
-              
             </div>
           </div>
+          
         </div>
+        
         <div class="col-sm-3">
           <div class="card">
             <img src="./img/2356194.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Ir a espacio</a>
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <h5 class="card-title"><b>Entregas grupales</b></h5>
+              <p class="card-text">Entregas grupales del proyecto y sus fases</p>
+              <a class="btn btn-primary" href="./Interfaz3.html" role="button">Entrar al espacio</a>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                 Eliminar
                </button>
    
-                 <!-- Modal -->
-                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                         <h5 class="modal-title" id="staticBackdropLabel">Eliminar la tarjeta</h5>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                         </div>
-                         <div class="modal-body">
-                         Desea borrar la tarjeta?
-                         </div>
-                         <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                         <button type="button" class="btn btn-danger">Eliminar</button>
-                         </div>
-                     </div>
-                     </div>
-                 </div>
               
             </div>
           </div>
         </div>
         
       </div>
-      
+    </div>
     
 
     </div>
