@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz 3</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+ <style> 
+  .box{
+        width: 30%; 
+        height: 500px; 
+        margin: 5px; 
+        border-radius: 5px;
+        float:left;
+ } 
+  .targeta{
+        width: 90%; 
+        height: 150px;
+        margin: 20px;
+        
+        background-color: rgb(185, 180, 180);
+  }
+  a { 
+    text-decoration: none; 
+    color: white} 
+</style>
+
+<script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+  </script>
+</head>
+
+</body>
+
+ <!-- NAVBAR -->
+ <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-3 border-bottom border-primary">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">TO DO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pag 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pag 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<!-- columna 1-->
+<div  class="box" style="background-color: rgb(173, 221, 255);" ondrop="drop(event)" ondragover="allowDrop(event)" id="box1">
+<div class="targeta" draggable="true" ondragstart="drag(event)" id="drag1" > </div>
+
+</div>
+<!-- columna 2-->
+<div class="box" style="background-color: rgba(152, 235, 131, 0.74);" ondrop="drop(event)" ondragover="allowDrop(event)" id="box2"> 
+
+
+</div>
+
+<!-- columna 3-->
+<div class="box" style="background-color: rgb(247, 226, 109);" ondrop="drop(event)" ondragover="allowDrop(event)" id="box3"> 
+
+
+
+</div>
+
+
+</body>
+</html>
