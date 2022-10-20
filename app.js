@@ -2,6 +2,78 @@
 
 
 
+//Validaciones de los formularios 
+
+(function () {
+  'use strict'
+
+  // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Bucle sobre ellos y evitar el envío
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -31,7 +103,7 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 */
-
+/*
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("div");
@@ -78,3 +150,4 @@ function validarFormulario(evento) {
   }
   this.submit();
 }
+*/
