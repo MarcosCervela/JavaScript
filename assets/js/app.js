@@ -17,7 +17,7 @@ for (i = 0; i < myNodelist.length; i++) {
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
+  close[i].onclick = function () {
     var div = this.parentElement;
     div.style.display = "none";
   }
@@ -52,22 +52,22 @@ function newElement() {
   li.appendChild(span);
 
   for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
+    close[i].onclick = function () {
       var div = this.parentElement;
       div.style.display = "none";
     }
   }
-} 
+}
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("formulario").addEventListener('submit', validarFormulario);
 });
 
 function validarFormulario(evento) {
   evento.preventDefault();
   var usuario = document.getElementById('validacion1').value;
-  if(usuario.length == 0) {
+  if (usuario.length == 0) {
     alert('No has escrito nada en el usuario');
     return;
   }
