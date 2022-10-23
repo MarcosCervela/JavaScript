@@ -1,7 +1,7 @@
 (function () {
     'use strict'
   
-    // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+    // Obtener todos los formularios a los que queremos aplicar estilos de validación 
     var forms = document.querySelectorAll('.needs-validation')
   
     // Bucle sobre ellos y evitar el envío
