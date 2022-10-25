@@ -210,3 +210,80 @@
     background-color: rgb(235, 230, 230);
 }
 
+
+
+
+
+
+
+.btn-add {
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  font-family: fantasy;
+  background-color: rgb(224, 55, 55);
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.li-container {
+  background-color: rgb(247, 226, 109);
+  width: 100%;
+  color: darkslategray;
+  margin-top: 20px;
+}
+form {
+  display: flex;
+}
+
+input {
+  padding: 15px 10px;
+  outline: none;
+  width: 400px;
+}
+
+.listbox3 {
+  padding: 0;
+  display: flex;
+  
+}
+
+li {
+  list-style: none;
+  background-color: lightgray;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+}
+
+li p {
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+}
+
+.btn-delete {
+  padding: 10px 10px;
+  border: none;
+  color: white;
+  font-family: fantasy;
+  background-color: rgb(224, 55, 55);
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  background-color: lightseagreen;
+}
+
+.btn-add:hover {
+  cursor: pointer;
+  background-color: darkcyan;
+}
+
+.search {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
