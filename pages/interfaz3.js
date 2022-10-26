@@ -21,12 +21,51 @@ function handleDrop(event) {
 
 
 
+//Creación de tarjeta
+const title2 = document.getElementById("recipient-title");
+const description2 = document.getElementById("recipient-descrip");
+const addBtn2 = document.querySelector(".btn-add");
+const card2 = document.getElementById("cardbody2");
+const empty2 = document.querySelector(".empty");
+
+
+addBtn2.addEventListener("Click", (e) =>{
+    e.preventDefault();
+
+    const titlecard2 = title2.value;
+    const discripcard2 = description2.value;
+
+    if(titlecard2 !== "" && discripcard2 !== ""){
+
+        const p = document.createElement("p");
+        const p1 = document.createElement("p");
+        p.textContent = titlecard2;
+        p1.textContent = description2;
+
+        card2.appendChild(p);
+        card2.appendChild(p1);
+        
+        title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+        description2.value ="";
+        empty.style.display = "none"; //Ponemos le display a 0
+        
+
+    }
+
+
+
+
+
+})
+
+
+
 //Creaccion de subelemento
 
 
  
-const title = document.getElementById("recipient-title");
-const description = document.getElementById("recipient-descrip");
+const title3 = document.getElementById("recipient-title");
+const description3 = document.getElementById("recipient-descrip");
 const addBtn = document.querySelector(".btn-add");
 const ul = document.getElementById("listbox3")
 const empty = document.querySelector(".empty");
@@ -35,8 +74,8 @@ const empty = document.querySelector(".empty");
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const text1 = title.value;
-  const text2 =  description.value;
+  const text1 = title3.value;
+  const text2 =  description3.value;
 
   if (text1 !== "" && text2!== "") {
     const li = document.createElement("li");
@@ -51,8 +90,8 @@ addBtn.addEventListener("click", (e) => {
     li.appendChild(addDeleteBtn());
     ul.appendChild(li);
 
-    title.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-    description.value ="";
+    title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description3.value ="";
     empty.style.display = "none"; //Ponemos le display a 0
     
   }
