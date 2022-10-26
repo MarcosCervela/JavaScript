@@ -24,8 +24,9 @@ function handleDrop(event) {
 //Creaccion de subelemento
 
 
-
-const input = document.querySelector("input");
+ 
+const title = document.getElementById("recipient-title");
+const description = document.getElementById("recipient-descrip");
 const addBtn = document.querySelector(".btn-add");
 const ul = document.getElementById("listbox3")
 const empty = document.querySelector(".empty");
@@ -34,21 +35,33 @@ const empty = document.querySelector(".empty");
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const text = input.value;
+  const text1 = title.value;
+  const text2 =  description.value;
 
-  if (text !== "") {
+  if (text1 !== "" && text2!== "") {
     const li = document.createElement("li");
     const p = document.createElement("p");
-    p.textContent = text;
+    const li1 = document.createElement("li");
+    const p1 = document.createElement("p");
+    p.textContent = text1;
+    p1.textContent = text2;
 
     li.appendChild(p);
+    li.appendChild(p1);
     li.appendChild(addDeleteBtn());
     ul.appendChild(li);
 
-    input.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    title.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description.value ="";
     empty.style.display = "none"; //Ponemos le display a 0
+    
   }
 });
+
+
+
+
+
 
 function addDeleteBtn() {
   const deleteBtn = document.createElement("button");
