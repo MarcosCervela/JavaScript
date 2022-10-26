@@ -25,30 +25,42 @@ function handleDrop(event) {
 const title2 = document.getElementById("recipient-title");
 const description2 = document.getElementById("recipient-descrip");
 const addBtn2 = document.querySelector(".btn-add");
-const card2 = document.getElementById("cardbody2");
-const empty2 = document.querySelector(".empty");
+const cardContainer = document.getElementById("card-container2");
+const empty = document.querySelector(".empty");
 
 
-addBtn2.addEventListener("Click", (e) =>{
+
+
+addBtn2.addEventListener("click", (e) =>{
     e.preventDefault();
 
     const titlecard2 = title2.value;
     const discripcard2 = description2.value;
 
+    debugger
+
     if(titlecard2 !== "" && discripcard2 !== ""){
 
+        const card = document.createElement("div");
         const p = document.createElement("p");
         const p1 = document.createElement("p");
-        p.textContent = titlecard2;
-        p1.textContent = description2;
 
-        card2.appendChild(p);
-        card2.appendChild(p1);
+
+        p.textContent = titlecard2;
+        p1.textContent = discripcard2;
+
+
+        card.appendChild(p);
+        card.appendChild(p1);
+        cardContainer.appendChild(card);
+        
         
         title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
         description2.value ="";
         empty.style.display = "none"; //Ponemos le display a 0
         
+
+
 
     }
 
@@ -62,7 +74,7 @@ addBtn2.addEventListener("Click", (e) =>{
 
 //Creaccion de subelemento
 
-
+/*
  
 const title3 = document.getElementById("recipient-title");
 const description3 = document.getElementById("recipient-descrip");
@@ -122,6 +134,6 @@ function addDeleteBtn() {
   return deleteBtn;
 }
 
-    
+    */
 
 
