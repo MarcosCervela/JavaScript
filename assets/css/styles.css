@@ -180,7 +180,8 @@ a { text-decoration: none;
 color: white} 
 
 .columna{
-  width: 20%; 
+  min-width: 300px;
+  width: 20%;
   min-height: 500px; 
   max-height: 1000px;
   margin: 5px; 

@@ -41,214 +41,150 @@
   </nav>
 
   <!-- columna 1-->
-  <div class="columna columna-azul bodyDrop"  id="box1">
-    <button   type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal1">
+  <div class="columna columna-azul bodyDrop" id="box1">
+    <button type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal1">
       <span class="icon">
-          <i class="fas fa-plus"></i>
+        <i class="fas fa-plus"></i>
       </span>
     </button>
 
-    
-    <div  class="container-fluid "   id="card-container1"    >
-      
-
-
-      
+    <div class="container-fluid " id="card-container1">
     </div>
-    
 
 
-    
+    <!--The Modal -->
+    <div class="modal" id="Modal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
+          <!--Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Tarjeta</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
+          <!--  Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="title" id="recipient-title1" placeholder="Título">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="description" id="recipient-descrip1"
+                  placeholder="Descripción">
+              </div>
+            </form>
+          </div>
 
-    
-  <!--The Modal -->
-  <div class="modal" id="Modal1">
-    <div class="modal-dialog">
-      <div class="modal-content">
+          <!-- Modal footer -->
 
-      <!--Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Tarjeta</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <div class="modal-footer">
+            <button id="btnAddCard1" type="button" class="btn btn-primary">Añadir</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
         </div>
-
-      <!--  Modal body -->
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <input type="text" class="form-control" name="title" id="recipient-title1" placeholder="Título" >
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" name="description" id="recipient-descrip1" placeholder="Descripción">
-            </div>
-          </form>
-        </div>
-      
-        
-        
-
-        <!-- Modal footer -->
-        
-        <div class="modal-footer">
-          <button id="btnAddCard1" type="button" class="btn btn-primary" >Añadir</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-
-        </div>
-    
-
       </div>
     </div>
-  </div>
-
-    
-    
-
-
   </div> <!-- FINAL Columna 1-->
 
 
   <!-- columna 2-->
-  <div class="columna columna-verde bodyDrop"  id="box2">
-    <button   type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal2">
+  <div class="columna columna-verde bodyDrop" id="box2">
+    <button type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal2">
       <span class="icon">
-          <i class="fas fa-plus"></i>
+        <i class="fas fa-plus"></i>
       </span>
     </button>
 
-    <div  class="container-fluid"   id="card-container2">
-      
-
-
-      
+    <div class="container-fluid" id="card-container2">
     </div>
 
+    <!--The Modal -->
+    <div class="modal" id="Modal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-
-    
-    
-   
-    
-    
-    
-
- <!--The Modal -->
-<div class="modal" id="Modal2">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-     <!--Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Tarjeta</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-    <!--  Modal body -->
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <input type="text" class="form-control" name="title" id="recipient-title2" placeholder="Título" >
+          <!--Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Tarjeta</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
-          <div class="mb-3">
-            <input type="text" class="form-control" name="description" id="recipient-descrip2" placeholder="Descripción">
+
+          <!--  Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="title" id="recipient-title2" placeholder="Título">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="description" id="recipient-descrip2"
+                  placeholder="Descripción">
+              </div>
+            </form>
           </div>
-        </form>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button id="btnAddCard2" type="button" class="btn btn-primary">Añadir</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
       </div>
-    
-      
-      
-
-      <!-- Modal footer -->
-      
-      <div class="modal-footer">
-        <button id="btnAddCard2" type="button" class="btn btn-primary" >Añadir</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-
-      </div>
-   
-
     </div>
-  </div>
-</div>
-    
-
-
-
   </div> <!-- final columna 2-->
-  
+
 
   <!-- columna 3-->
-  <div class="columna columna-amarilla "  id="box3">
+  <div class="columna columna-amarilla " id="box3">
+    <button type="button" class="button is-danger" data-bs-toggle="modal" data-bs-target="#Modal3">
+      <span class="icon">
+        <i class="fas fa-plus"></i>
+      </span>
+    </button>
 
-      <button   type="button" class="button is-danger" data-bs-toggle="modal"  data-bs-target="#Modal3">
-        <span class="icon">
-            <i class="fas fa-plus"></i>
-        </span>
-      </button>
+    <div class="container-fluid " id="card-container3">
+    </div>
 
-    
+    <!-- The Modal -->
+    <div class="modal" id="Modal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-      <div  class="container-fluid "  id="card-container3" >
-           
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Tarjeta</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="title" id="recipient-title3" placeholder="Título">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="description" id="recipient-descrip3"
+                  placeholder="Descripción">
+              </div>
+            </form>
+          </div>
 
-      
-      </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button id="btnAddCard3" type="button" class="btn btn-primary">Añadir</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 
-
-      
-  
-      
-     
-      
-      
-      
-
-<!-- The Modal -->
-  <div class="modal" id="Modal3">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Tarjeta</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <input type="text" class="form-control" name="title" id="recipient-title3" placeholder="Título" >
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" name="description" id="recipient-descrip3" placeholder="Descripción">
-            </div>
-          </form>
-        </div>
-        
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button id="btnAddCard3" type="button" class="btn btn-primary" >Añadir</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
 
         </div>
-
       </div>
     </div>
   </div>
-
-
-
-  </div>
-  
 
   <!-- FINAL DE LES 3 COLUMNES-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
   <script src="./interfaz3.js"></script>
-</body>
+  </body>
 
 </html>
