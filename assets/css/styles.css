@@ -275,7 +275,9 @@ width: 100%;
 }
 
 .cardbody{
-
-
-width: 95%; height: 150px;margin: 8px;padding: 5px;background-color: rgb(235, 230, 230);
+  width: 95%;
+  /* height: 150px; */
+  margin: 8px;
+  padding: 5px;
+  background-color: rgb(235, 230, 230);
 }
