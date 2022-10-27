@@ -1,5 +1,9 @@
 const COLUMN_CLASS = 'columna'
 
+const modalEdicionTarjeta = new bootstrap.Modal('#modal-edicion-tarjeta')
+const modalEdicionTarjetaTitleElement = document.getElementById('modal-edicion-tarjeta-title')
+const modalEdicionTarjetaDescriptionElement = document.getElementById('modal-edicion-tarjeta-description')
+const modalEdicionTarjetaModificarElement = document.getElementById('modal-edicion-tarjeta-modificar')
 
 function allowDrop(event) {
   event.preventDefault();
@@ -86,6 +90,29 @@ addBtn1.addEventListener("click", (e) => {
       currentCardContainer.removeChild(currentCard)
     })
 
+    modifBtn.addEventListener("click", (e) => {
+      modalEdicionTarjeta.show()
+
+      const currentCardElement = e.target.parentElement
+      const currentCardH3Element = currentCardElement.querySelector('h3')
+      const currentCardPElement = currentCardElement.querySelector('p')
+
+      modalEdicionTarjetaModificarElement.onclick = () => {
+        const title = modalEdicionTarjetaTitleElement.value
+        const description = modalEdicionTarjetaDescriptionElement.value
+
+        if (title === '' || description === '') {
+          return
+        }
+
+        currentCardH3Element.textContent = title
+        currentCardPElement.textContent = description
+
+        modalEdicionTarjetaTitleElement.value = ''
+        modalEdicionTarjetaDescriptionElement.value = ''
+      }
+    })
+
     title1.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
     description1.value = "";
     empty1.style.display = "none"; //Ponemos le display a 0
@@ -147,6 +174,29 @@ addBtn2.addEventListener("click", (e) => {
       const currentCard = e.target.parentElement
       const currentCardContainer = currentCard.parentElement
       currentCardContainer.removeChild(currentCard)
+    })
+
+    modifBtn.addEventListener("click", (e) => {
+      modalEdicionTarjeta.show()
+
+      const currentCardElement = e.target.parentElement
+      const currentCardH3Element = currentCardElement.querySelector('h3')
+      const currentCardPElement = currentCardElement.querySelector('p')
+
+      modalEdicionTarjetaModificarElement.onclick = () => {
+        const title = modalEdicionTarjetaTitleElement.value
+        const description = modalEdicionTarjetaDescriptionElement.value
+
+        if (title === '' || description === '') {
+          return
+        }
+
+        currentCardH3Element.textContent = title
+        currentCardPElement.textContent = description
+
+        modalEdicionTarjetaTitleElement.value = ''
+        modalEdicionTarjetaDescriptionElement.value = ''
+      }
     })
 
     title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
@@ -218,6 +268,29 @@ addBtn3.addEventListener("click", (e) => {
       const currentCard = e.target.parentElement
       const currentCardContainer = currentCard.parentElement
       currentCardContainer.removeChild(currentCard)
+    })
+
+    modifBtn.addEventListener("click", (e) => {
+      modalEdicionTarjeta.show()
+
+      const currentCardElement = e.target.parentElement
+      const currentCardH3Element = currentCardElement.querySelector('h3')
+      const currentCardPElement = currentCardElement.querySelector('p')
+
+      modalEdicionTarjetaModificarElement.onclick = () => {
+        const title = modalEdicionTarjetaTitleElement.value
+        const description = modalEdicionTarjetaDescriptionElement.value
+
+        if (title === '' || description === '') {
+          return
+        }
+
+        currentCardH3Element.textContent = title
+        currentCardPElement.textContent = description
+
+        modalEdicionTarjetaTitleElement.value = ''
+        modalEdicionTarjetaDescriptionElement.value = ''
+      }
     })
 
     title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
