@@ -41,44 +41,66 @@
   </nav>
 
   <!-- columna 1-->
-  <div class="columna columna-azul" ondrop="handleDrop(event)" ondragover="allowDrop(event)" id="box1">
-    <button id="btnAdd" type="button" class="button is-danger">
+  <div class="columna columna-azul bodyDrop"  id="box1">
+    <button   type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal1">
       <span class="icon">
           <i class="fas fa-plus"></i>
       </span>
     </button>
 
-    <!--Modal del boton de añadir elemento-->
+    
+    <div  class="container-fluid "   id="card-container1"    >
+      
 
-    <!-- config dentro del style : width: 80%; height: 150px; max-height: 400px; margin: 20px;-->
-    <div class="container-fluid targeta" draggable="true" ondragstart="handleDrag(event)" id="targeta1">
-      <div class="row g-4">
-        <div class="col-md-12">
-          <div class="card-body">
-            <p><b>Nombre de la carta</b> </p>
-            <p> <small>Descripción de la carta</small></p>
-            <div class="row g-4">
-              <div class="col-md-5">
-                <button type="button" class="btn btn-danger" id="eliminarTargeta">
-                  <small> Eliminar</small>
-              </div>
-              <div class="col-md-6">
-                <button class="btn btn-warning" id="modificarTargeta"> <small> Modificar</small>
-                </button>
-              </div>
-            </div>
-          </div>
+
+      
+    </div>
+    
+
+
+    
+
+
+
+    
+  <!--The Modal -->
+  <div class="modal" id="Modal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      <!--Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Tarjeta</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+
+      <!--  Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="title" id="recipient-title1" placeholder="Título" >
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="description" id="recipient-descrip1" placeholder="Descripción">
+            </div>
+          </form>
+        </div>
+      
+        
+        
+
+        <!-- Modal footer -->
+        
+        <div class="modal-footer">
+          <button id="btnAddCard1" type="button" class="btn btn-primary" >Añadir</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+
+        </div>
+    
+
       </div>
     </div>
-
-
-    
-
-
-
-    
-
+  </div>
 
     
     
@@ -88,14 +110,14 @@
 
 
   <!-- columna 2-->
-  <div class="columna columna-verde" ondrop="handleDrop(event)" ondragover="allowDrop(event)" id="box2">
-    <button   type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal">
+  <div class="columna columna-verde bodyDrop"  id="box2">
+    <button   type="button" class="btn-box2 is-danger" data-bs-toggle="modal" data-bs-target="#Modal2">
       <span class="icon">
           <i class="fas fa-plus"></i>
       </span>
     </button>
 
-    <div  class="row align-items-center"id="card-container2">
+    <div  class="container-fluid"   id="card-container2">
       
 
 
@@ -104,66 +126,47 @@
 
 
 
-    <!--<div class="search">
-      <form>
-          <input type="text" placeholder="Titulo">
-          <button class="btn-add">+</button>
-      </form>
-    </div>
-
-    <div class="li-container" ondrop="handleDrop(event)" ondragover="allowDrop(event)" id="list3">
-      <ul id="listbox3">
-        
-
-
-      </ul>
-    </div>
-
-
-    <div class="empty">
-      <p>No tienes tareas pendientes.</p>
-    </div>
-  -->
+    
     
    
     
     
     
-<!--
- The Modal
-<div class="modal" id="Modal">
+
+ <!--The Modal -->
+<div class="modal" id="Modal2">
   <div class="modal-dialog">
     <div class="modal-content">
 
-     Modal Header 
+     <!--Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Tarjeta</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-     Modal body 
+    <!--  Modal body -->
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <input type="text" class="form-control" name="title" id="recipient-title" placeholder="Título" >
+            <input type="text" class="form-control" name="title" id="recipient-title2" placeholder="Título" >
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" name="description" id="recipient-descrip" placeholder="Descripción">
+            <input type="text" class="form-control" name="description" id="recipient-descrip2" placeholder="Descripción">
           </div>
         </form>
       </div>
-    -->
+    
       
       
 
       <!-- Modal footer -->
-      <!--
+      
       <div class="modal-footer">
-        <button id="btnAddCard" type="button" class="btn btn-primary" >Añadir</button>
+        <button id="btnAddCard2" type="button" class="btn btn-primary" >Añadir</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 
       </div>
-    -->
+   
 
     </div>
   </div>
@@ -176,42 +179,25 @@
   
 
   <!-- columna 3-->
-  <div class="columna columna-amarilla" ondrop="handleDrop(event)" ondragover="allowDrop(event)" id="box3">
+  <div class="columna columna-amarilla "  id="box3">
 
-      <button   type="button" class="button is-danger" data-bs-toggle="modal" data-bs-target="#Modal">
+      <button   type="button" class="button is-danger" data-bs-toggle="modal"  data-bs-target="#Modal3">
         <span class="icon">
             <i class="fas fa-plus"></i>
         </span>
       </button>
 
-      <!--<div  class="row align-items-center"id="card-container">
+    
+
+      <div  class="container-fluid "  id="card-container3" >
+           
 
 
-
-        
-      </div>-->
-
-
-
-      <!--<div class="search">
-        <form>
-            <input type="text" placeholder="Titulo">
-            <button class="btn-add">+</button>
-        </form>
-      </div>-->
-
-      <div class="li-container"  id="list3">
-        <ul id="listbox3" >
-          
-
-
-        </ul>
+      
       </div>
 
 
-      <div class="empty">
-        <p>No tienes tareas pendientes.</p>
-      </div>
+      
   
       
      
@@ -220,13 +206,13 @@
       
 
 <!-- The Modal -->
-  <div class="modal" id="Modal">
+  <div class="modal" id="Modal3">
     <div class="modal-dialog">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
+          <h4 class="modal-title">Tarjeta</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
@@ -234,10 +220,10 @@
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <input type="text" class="form-control" name="title" id="recipient-title" placeholder="Título" >
+              <input type="text" class="form-control" name="title" id="recipient-title3" placeholder="Título" >
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" name="description" id="recipient-descrip" placeholder="Descripción">
+              <input type="text" class="form-control" name="description" id="recipient-descrip3" placeholder="Descripción">
             </div>
           </form>
         </div>
@@ -245,7 +231,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button id="btnAddCard" type="button" class="btn-add btn-primary" >Añadir</button>
+          <button id="btnAddCard3" type="button" class="btn btn-primary" >Añadir</button>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 
         </div>
@@ -255,12 +241,13 @@
   </div>
 
 
+
   </div>
   
 
   <!-- FINAL DE LES 3 COLUMNES-->
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
   <script src="./interfaz3.js"></script>
 </body>
 
