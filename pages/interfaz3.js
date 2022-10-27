@@ -2,110 +2,156 @@ const COLUMN_CLASS = 'columna'
 
 
 function allowDrop(event) {
-    event.preventDefault();
+  event.preventDefault();
 }
 
 function handleDrag(event) {
-    event.dataTransfer.setData("text", event.target.id);
+  event.dataTransfer.setData("text", event.target.id);
 }
 
 function handleDrop(event) {
-    if (!event.target.className?.includes(COLUMN_CLASS)) {
-        return
-    }
+  if (!event.target.className?.includes(COLUMN_CLASS)) {
+    return
+  }
 
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
 }
 
 
+//Creación de tarjetabox1
 
-//Creación de tarjeta
-const title2 = document.getElementById("recipient-title");
-const description2 = document.getElementById("recipient-descrip");
-const addBtn2 = document.querySelector(".btn-add");
-const cardContainer = document.getElementById("card-container2");
-const empty = document.querySelector(".empty");
-
-
-
-
-addBtn2.addEventListener("click", (e) =>{
-    e.preventDefault();
-
-    const titlecard2 = title2.value;
-    const discripcard2 = description2.value;
-
-    debugger
-
-    if(titlecard2 !== "" && discripcard2 !== ""){
-
-        const card = document.createElement("div");
-        const p = document.createElement("p");
-        const p1 = document.createElement("p");
-
-
-        p.textContent = titlecard2;
-        p1.textContent = discripcard2;
-
-
-        card.appendChild(p);
-        card.appendChild(p1);
-        cardContainer.appendChild(card);
-        
-        
-        title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-        description2.value ="";
-        empty.style.display = "none"; //Ponemos le display a 0
-        
+const title1 = document.getElementById("recipient-title1");
+const description1 = document.getElementById("recipient-descrip1");
+const addBtn1 = document.getElementById("btnAddCard1");
+const cardContainer1 = document.getElementById("card-container1");
+const empty1 = document.querySelector(".empty");
 
 
 
-    }
+//Generador de IDs
+function generateUUID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+  return uuid;
+}
 
-
-
-
-
-})
-
-
-
-//Creaccion de subelemento
-
-/*
- 
-const title3 = document.getElementById("recipient-title");
-const description3 = document.getElementById("recipient-descrip");
-const addBtn = document.querySelector(".btn-add");
-const ul = document.getElementById("listbox3")
-const empty = document.querySelector(".empty");
-
-
-addBtn.addEventListener("click", (e) => {
+addBtn1.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const text1 = title3.value;
-  const text2 =  description3.value;
+  const titlecard1 = title1.value;
+  const discripcard1 = description1.value;
 
-  if (text1 !== "" && text2!== "") {
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    const li1 = document.createElement("li");
+  if (titlecard1 !== "" && discripcard1 !== "") {
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
     const p1 = document.createElement("p");
-    p.textContent = text1;
-    p1.textContent = text2;
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
 
-    li.appendChild(p);
-    li.appendChild(p1);
-    li.appendChild(addDeleteBtn());
-    ul.appendChild(li);
+    p.textContent = titlecard1;
+    p1.textContent = discripcard1;
 
-    title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-    description3.value ="";
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger";
+    deleteBtn.style = "";
+
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
+
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
+
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
+
+    cardContainer1.appendChild(card);
+
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
+      }
+
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title1.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description1.value = "";
+    empty1.style.display = "none"; //Ponemos le display a 0
+  }
+});
+
+
+
+//Creación de tarjetabox2
+const title2 = document.getElementById("recipient-title2");
+const description2 = document.getElementById("recipient-descrip2");
+const addBtn2 = document.getElementById("btnAddCard2");
+const cardContainer2 = document.getElementById("card-container2");
+const empty = document.querySelector(".empty");
+
+
+
+
+addBtn2.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const titlecard2 = title2.value;
+  const discripcard2 = description2.value;
+
+  if (titlecard2 !== "" && discripcard2 !== "") {
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
+
+    p.textContent = titlecard2;
+    p1.textContent = discripcard2;
+
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger";
+    deleteBtn.style = "";
+
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
+
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
+
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
+
+    cardContainer2.appendChild(card);
+
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
+      }
+
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description2.value = "";
     empty.style.display = "none"; //Ponemos le display a 0
-    
   }
 });
 
@@ -114,26 +160,70 @@ addBtn.addEventListener("click", (e) => {
 
 
 
-function addDeleteBtn() {
-  const deleteBtn = document.createElement("button");
+//CreacionSubelementosBox3
 
-  deleteBtn.textContent = "X";
-  deleteBtn.className = "btn-delete";
 
-  deleteBtn.addEventListener("click", (e) => {
-    const item = e.target.parentElement;
-    ul.removeChild(item);
+const title3 = document.getElementById("recipient-title3");
+const description3 = document.getElementById("recipient-descrip3");
+const addBtn3 = document.getElementById("btnAddCard3");
+const cardContainer3 = document.getElementById("card-container3");
+const empty3 = document.querySelector(".empty");
 
-    const items = document.querySelectorAll("li");
 
-    if (items.length === 0) {
-      empty.style.display = "block";
-    }
-  });
 
-  return deleteBtn;
-}
 
-    */
+addBtn3.addEventListener("click", (e) => {
+  e.preventDefault();
 
+  const titlecard3 = title3.value;
+  const discripcard3 = description3.value;
+
+  if (titlecard3 !== "" && discripcard3 !== "") {
+
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
+
+    p.textContent = titlecard3;
+    p1.textContent = discripcard3;
+
+    //Boton Eliminar
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger btn_eliminar";
+    deleteBtn.style = "";
+
+    //Boton Modificar
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
+
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
+
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
+
+    cardContainer3.appendChild(card);
+
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
+      }
+
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description3.value = "";
+    empty3.style.display = "none"; //Ponemos le display a 0
+  }
+
+});
 
