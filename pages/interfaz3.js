@@ -1,76 +1,23 @@
-/*const COLUMN_CLASS = 'columna'
+const COLUMN_CLASS = 'columna'
 
 
 function allowDrop(event) {
-    event.preventDefault();
+  event.preventDefault();
 }
 
 function handleDrag(event) {
-    event.dataTransfer.setData("text", event.target.id);
+  event.dataTransfer.setData("text", event.target.id);
 }
 
 function handleDrop(event) {
-    if (!event.target.className?.includes(COLUMN_CLASS)) {
-        return
-    }
+  if (!event.target.className?.includes(COLUMN_CLASS)) {
+    return
+  }
 
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
 }
-ondrop="handleDrop(event)" ondragover="allowDrop(event)"
-*/
-
-
-//Drag and Drop
-
-/*
-const fill = document.querySelectorAll('.cardbody');
-const empties = document.querySelectorAll('.columna');
-
-
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
-
-
-for (const empty of empties) {
-  empty.addEventListener('dragover', dragOver);
-  empty.addEventListener('dragenter', dragEnter);
-  empty.addEventListener('dragleave', dragLeave);
-  empty.addEventListener('drop', dragDrop);
-}
-
-
-
-function dragStart() {
-  this.className += ' hold';
-  setTimeout(() => (this.className = 'invisible'), 0);
-}
-
-function dragEnd() {
-  this.className = 'fill';
-}
-
-function dragOver(e) {
-  e.preventDefault();
-}
-
-function dragEnter(e) {
-  e.preventDefault();
-  this.className += ' hovered';
-}
-
-function dragLeave() {
-  this.className = 'empty';
-}
-
-function dragDrop() {
-  this.className = 'empty';
-  this.append(fill);
-}
-
-
-*/
 
 
 //Creación de tarjetabox1
@@ -83,86 +30,66 @@ const empty1 = document.querySelector(".empty");
 
 
 
+//Generador de IDs
+function generateUUID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+  return uuid;
+}
 
-addBtn1.addEventListener("click", (e) =>{
-    e.preventDefault();
-    //var UID = "id-" + Math.floor(Math.random() * 999999);
-    
-    const titlecard1 = title1.value;
-    const discripcard1 = description1.value;
+addBtn1.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    //Generador de IDs
-    function generateUUID() {
-      var d = new Date().getTime();
-      var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-          var r = (d + Math.random() * 16) % 16 | 0;
-          d = Math.floor(d / 16);
-          return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-      });
-      return uuid;
-  }
-    
-    
-    
+  const titlecard1 = title1.value;
+  const discripcard1 = description1.value;
 
-    if(titlecard1 !== "" && discripcard1 !== ""){
-      
-        const card = document.createElement("div");
-        const p = document.createElement("h3");
-        const p1 = document.createElement("p");
-        const deleteBtn = document.createElement("button");
-        const modifBtn = document.createElement("button");
+  if (titlecard1 !== "" && discripcard1 !== "") {
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
 
-        
-        p.textContent = titlecard1;
-        p1.textContent = discripcard1;
+    p.textContent = titlecard1;
+    p1.textContent = discripcard1;
 
-        deleteBtn.textContent = "Eliminar";
-        deleteBtn.className = "btn btn-danger";
-        deleteBtn.style = "";
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger";
+    deleteBtn.style = "";
 
-        modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning m-2"
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
 
-        
-        card.appendChild(p);
-        card.appendChild(p1);
-        card.appendChild(deleteBtn);
-        card.appendChild(modifBtn);
-        
-        
-        
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
 
-        card.className += "container-fluid cardbody";
-        card.id += generateUUID();
-        card.draggable += "true";
-        
-        
-        cardContainer1.appendChild(card);
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
 
+    cardContainer1.appendChild(card);
 
-
-        deleteBtn.addEventListener("click", (e) => {
-
-            const item = e.target.parentElement;
-            cardContainer1.removeChild(item);
-
-            
-
-
-
-        })
-        
-        
-        title1.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-        description1.value ="";
-        empty1.style.display = "none"; //Ponemos le display a 0
-        
-
-      
-
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
       }
-    
+
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title1.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description1.value = "";
+    empty1.style.display = "none"; //Ponemos le display a 0
+  }
 });
 
 
@@ -177,79 +104,55 @@ const empty = document.querySelector(".empty");
 
 
 
-addBtn2.addEventListener("click", (e) =>{
-    e.preventDefault();
+addBtn2.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    const titlecard2 = title2.value;
-    const discripcard2 = description2.value;
+  const titlecard2 = title2.value;
+  const discripcard2 = description2.value;
 
-    //Generador de IDs
-    function generateUUID() {
-      var d = new Date().getTime();
-      var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-          var r = (d + Math.random() * 16) % 16 | 0;
-          d = Math.floor(d / 16);
-          return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-      });
-      return uuid;
-  }
+  if (titlecard2 !== "" && discripcard2 !== "") {
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
 
-    if(titlecard2 !== "" && discripcard2 !== ""){
+    p.textContent = titlecard2;
+    p1.textContent = discripcard2;
 
-        const card = document.createElement("div");
-        const p = document.createElement("h3");
-        const p1 = document.createElement("p");
-        const deleteBtn = document.createElement("button");
-        const modifBtn = document.createElement("button");
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger";
+    deleteBtn.style = "";
 
-        p.textContent = titlecard2;
-        p1.textContent = discripcard2;
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
 
-        deleteBtn.textContent ="Eliminar";
-        deleteBtn.className = "btn btn-danger";
-        deleteBtn.style = "";
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
 
-        modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning m-2"
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
 
-        
-        card.appendChild(p);
-        card.appendChild(p1);
-        card.appendChild(deleteBtn);
-        card.appendChild(modifBtn);
-        
-        
+    cardContainer2.appendChild(card);
 
-        card.className += "container-fluid cardbody";
-        card.id += generateUUID();
-        card.draggable += "true";
-        
-        
-        cardContainer2.appendChild(card);
-
-
-
-        deleteBtn.addEventListener("click", (e) => {
-
-            const item = e.target.parentElement;
-            cardContainer2.removeChild(item);
-
-            
-
-
-
-        })
-        
-        
-        title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-        description2.value ="";
-        empty.style.display = "none"; //Ponemos le display a 0
-        
-
-
-
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
       }
 
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title2.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description2.value = "";
+    empty.style.display = "none"; //Ponemos le display a 0
+  }
 });
 
 
@@ -269,80 +172,58 @@ const empty3 = document.querySelector(".empty");
 
 
 
-addBtn3.addEventListener("click", (e) =>{
-    e.preventDefault();
+addBtn3.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    const titlecard3 = title3.value;
-    const discripcard3 = description3.value;
+  const titlecard3 = title3.value;
+  const discripcard3 = description3.value;
 
-    //Generador de IDs
-    function generateUUID() {
-      var d = new Date().getTime();
-      var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-          var r = (d + Math.random() * 16) % 16 | 0;
-          d = Math.floor(d / 16);
-          return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-      });
-      return uuid;
-  }
+  if (titlecard3 !== "" && discripcard3 !== "") {
 
-    if(titlecard3 !== "" && discripcard3 !== ""){
+    const card = document.createElement("div");
+    const p = document.createElement("h3");
+    const p1 = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const modifBtn = document.createElement("button");
 
-        const card = document.createElement("div");
-        const p = document.createElement("h3");
-        const p1 = document.createElement("p");
-        const deleteBtn = document.createElement("button");
-        const modifBtn = document.createElement("button");
+    p.textContent = titlecard3;
+    p1.textContent = discripcard3;
 
+    //Boton Eliminar
+    deleteBtn.textContent = "Eliminar";
+    deleteBtn.className = "btn btn-danger btn_eliminar";
+    deleteBtn.style = "";
 
-        p.textContent = titlecard3;
-        p1.textContent = discripcard3;
+    //Boton Modificar
+    modifBtn.textContent = "Modificar"
+    modifBtn.className = "btn btn-warning m-2"
 
-        //Boton Eliminar
-        deleteBtn.textContent ="Eliminar";
-        deleteBtn.className = "btn btn-danger btn_eliminar";
-        deleteBtn.style = "";
+    card.appendChild(p);
+    card.appendChild(p1);
+    card.appendChild(deleteBtn);
+    card.appendChild(modifBtn);
 
-        //Boton Modificar
-        modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning m-2"
+    card.className += "container-fluid cardbody";
+    card.id += generateUUID();
+    card.draggable += "true";
+    card.ondragstart = (event) => handleDrag(event)
 
-        
-        card.appendChild(p);
-        card.appendChild(p1);
-        card.appendChild(deleteBtn);
-        card.appendChild(modifBtn);
-        
+    cardContainer3.appendChild(card);
 
-        card.className += "container-fluid cardbody";
-        card.id += generateUUID();
-        card.draggable += "true";
-        
-        
-        cardContainer3.appendChild(card);
-
-
-
-        deleteBtn.addEventListener("click", (e) => {
-
-            const item = e.target.parentElement;
-            cardContainer3.removeChild(item);
-
-            
-
-
-
-        })
-        
-        
-        title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
-        description3.value ="";
-        empty3.style.display = "none"; //Ponemos le display a 0
-        
-
-
-
+    deleteBtn.addEventListener("click", (e) => {
+      if (!confirm("Quieres eliminar la tarjeta?")) {
+        return
       }
+
+      const currentCard = e.target.parentElement
+      const currentCardContainer = currentCard.parentElement
+      currentCardContainer.removeChild(currentCard)
+    })
+
+    title3.value = ""; // Para que el valor una vez le des al boton de añadir vuelva a estar vacio el imput
+    description3.value = "";
+    empty3.style.display = "none"; //Ponemos le display a 0
+  }
 
 });
 
