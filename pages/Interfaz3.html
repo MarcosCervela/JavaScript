@@ -187,6 +187,43 @@
 
   <!-- FINAL DE LES 3 COLUMNES-->
 
+
+
+
+  <!--The Modal -->
+  <div class="modal" id="modal-edicion-tarjeta">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar tarjeta</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!--  Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="title" id="modal-edicion-tarjeta-title" placeholder="Título">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="description" id="modal-edicion-tarjeta-description"
+                placeholder="Descripción">
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+
+        <div class="modal-footer">
+          <button id="modal-edicion-tarjeta-modificar" type="button" class="btn btn-primary">Modificar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
   <script src="./interfaz3.js"></script>
   </body>
