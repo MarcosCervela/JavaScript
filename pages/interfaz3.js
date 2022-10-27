@@ -122,7 +122,7 @@ addBtn1.addEventListener("click", (e) =>{
         deleteBtn.style = "";
 
         modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning"
+        modifBtn.className = "btn btn-warning m-2"
 
         
         card.appendChild(p);
@@ -134,7 +134,6 @@ addBtn1.addEventListener("click", (e) =>{
         
 
         card.className += "container-fluid cardbody";
-        card.style +="width: 95%; height: 150px;margin: 8px;padding: 5px;background-color: rgb(235, 230, 230);"
         card.id += generateUUID();
         card.draggable += "true";
         
@@ -211,7 +210,7 @@ addBtn2.addEventListener("click", (e) =>{
         deleteBtn.style = "";
 
         modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning"
+        modifBtn.className = "btn btn-warning m-2"
 
         
         card.appendChild(p);
@@ -222,7 +221,6 @@ addBtn2.addEventListener("click", (e) =>{
         
 
         card.className += "container-fluid cardbody";
-        card.style +="width: 95%; height: 150px;margin: 8px;padding: 5px;background-color: rgb(235, 230, 230);";
         card.id += generateUUID();
         card.draggable += "true";
         
@@ -307,7 +305,7 @@ addBtn3.addEventListener("click", (e) =>{
 
         //Boton Modificar
         modifBtn.textContent = "Modificar"
-        modifBtn.className = "btn btn-warning"
+        modifBtn.className = "btn btn-warning m-2"
 
         
         card.appendChild(p);
@@ -317,7 +315,6 @@ addBtn3.addEventListener("click", (e) =>{
         
 
         card.className += "container-fluid cardbody";
-        card.style +="width: 95%; height: 150px;margin: 8px;padding: 5px;background-color: rgb(235, 230, 230);";
         card.id += generateUUID();
         card.draggable += "true";
         
